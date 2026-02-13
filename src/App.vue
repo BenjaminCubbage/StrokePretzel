@@ -3,14 +3,17 @@
         <ProbabilityEditor
             class="probability"
             v-model:numerator="numerator"
-            v-model:denominator="denominator" />
+            v-model:denominator="denominator"
+            @interacted="probInteracted"
+            @focus-in="probGotFocus"
+            @focus-out="probLostFocus" />
 
         <SlotMachine
             class="slot-machine"
             :numerator="numerator"
             :denominator="denominator"
-            @spinStarted="spinStarted"
-            @spinCompleted="spinCompleted" />
+            @spin-started="spinStarted"
+            @spin-completed="spinCompleted" />
 
         <div class="bg-floor">
             <div class="grid-pattern"></div>
@@ -20,8 +23,7 @@
 
 <script setup>
 import {
-    ref,
-    watch
+    ref
 } from 'vue';
 
 import SlotMachine       from './components/SlotMachine.vue';
@@ -31,21 +33,31 @@ const numerator   = ref(1);
 const denominator = ref(100);
 
 /*
-    If the probability was edited while spinning, don't
-    auto-decrement.
+    If the probability was interacted with while spinning or is
+    currently focused, don't auto-decrement.
 */
-let wasEdited = false;
 
-watch([numerator, denominator], () => {
-    wasEdited = true;
-});
+let probWasEdited = false;
+let probIsFocused = false;
+
+function probInteracted() {
+    probWasEdited = true;
+}
+
+function probGotFocus() {
+    probIsFocused = true;
+}
+
+function probLostFocus() {
+    probIsFocused = false;
+}
 
 function spinStarted() {
-    wasEdited = false;
+    probWasEdited = false;
 }
 
 function spinCompleted(won) {
-    if (!wasEdited && denominator.value > 1) {
+    if (!probWasEdited && !probIsFocused && denominator.value > 1) {
         if (denominator.value > 1)
             --denominator.value;
 

@@ -65,8 +65,8 @@ const props = defineProps({
 });
 
 const emit = defineEmits([
-    'spinStarted',
-    'spinCompleted'
+    'spin-started',
+    'spin-completed'
 ]);
 
 const cardAnimation1 = useTemplateRef('cardAnimation1');
@@ -99,7 +99,7 @@ async function runSlotMachine() {
             values[2] = true;
     }
 
-    emit('spinStarted');
+    emit('spin-started');
     isAnimating.value = true;
     await Promise.all([
         cardAnimation1.value.animate(6000, values[0]),
@@ -107,7 +107,7 @@ async function runSlotMachine() {
         cardAnimation3.value.animate(8000, values[2])]);
     isAnimating.value = false;
 
-    emit('spinCompleted', !didFail);
+    emit('spin-completed', !didFail);
     return !didFail;
 }
 </script>

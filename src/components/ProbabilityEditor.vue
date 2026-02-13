@@ -1,6 +1,7 @@
 <template>
     <div
         class="probability-editor"
+        @focusin="gotFocus"
         @focusout="lostFocus">
         <ProbabilityEditorInput
             ref="numeratorEl"
@@ -23,6 +24,12 @@ import {
 } from 'vue';
 
 import ProbabilityEditorInput from './ProbabilityEditorInput.vue';
+
+const emit = defineEmits([
+    'interacted',
+    'focus-in',
+    'focus-out'
+]);
 
 const numerator = defineModel('numerator', {
     required: true,
@@ -50,11 +57,23 @@ watch([numerator, denominator], () => {
     immediate: true
 });
 
+watch([inputNumerator, inputDenominator], () => {
+    emit('interacted');
+});
+
+function gotFocus(e) {
+    if (e.relatedTarget !== numeratorEl.value.innerElement &&
+        e.relatedTarget !== denominatorEl.value.innerElement) {
+        emit('focus-in');
+    }
+}
+
 function lostFocus(e) {
     if (e.relatedTarget !== numeratorEl.value.innerElement &&
         e.relatedTarget !== denominatorEl.value.innerElement) {
         inputDenominator.value = denominator.value = realDenominator.value;
         inputNumerator.value   = numerator.value   = realNumerator.value;
+        emit('focus-out');
     }
 }
 
