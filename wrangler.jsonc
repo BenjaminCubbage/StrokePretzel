@@ -1,5 +1,5 @@
 {
-    "name": "stroke-pretzel",
+    "name": "strokepretzel",
     "compatibility_date": "2026-02-13",
     "build": {
 	    "command": "npm run build"
