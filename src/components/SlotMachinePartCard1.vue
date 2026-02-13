@@ -1,5 +1,5 @@
 <template>
-    <svg style="height: 100%" viewBox="0 0 36.5 52.3">
+    <svg style="height: var(--slot-machine-intrinsic-height)" viewBox="0 0 36.5 52.3">
         <path class="st0" d="M14,25.2h-3.5c-0.3,0-0.5-0.2-0.5-0.5v-7.4c0-0.3,0.2-0.5,0.5-0.5H14c0.3,0,0.5,0.2,0.5,0.5v7.4
             C14.5,25,14.3,25.2,14,25.2z"/>
         <path class="st1" d="M10.5,24.5c-0.3,0-0.6-0.3-0.6-0.6v-7.4c0-0.3,0.3-0.6,0.6-0.6H14c0.3,0,0.6,0.3,0.6,0.6v7.4

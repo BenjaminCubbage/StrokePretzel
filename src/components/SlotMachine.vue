@@ -120,6 +120,15 @@ async function runSlotMachine() {
 }
 
 .parts {
+    /*
+        This is the height of the slot machine SVG before transforms.
+
+        This was initially just set on this class with part heights 
+        set to 100%. This led to strange behavior on Safari though 
+        so now this variable exists to be inherited.
+    */
+    --slot-machine-intrinsic-height: 600px;
+
     --x-rotation: 0deg;
     --scale:      1;
 
@@ -134,10 +143,10 @@ async function runSlotMachine() {
 
     --transform-transition: transform 1000ms ease;
 
-    aspect-ratio:   0.7 / 1;
     display:        grid;
     grid-area:      1 / 1;
-    height:         600px;
+    width:          100%;
+    height:         var(--slot-machine-intrinsic-height);
     pointer-events: none;
     z-index:        0;
 
@@ -217,16 +226,16 @@ async function runSlotMachine() {
     grid-area:  1 / 1;
     place-self: center;
     z-index:    1;
-    
-    transform: 
+
+    transform:
         translate(
-            calc(2px   + var(--center-offset-x)), 
-            calc(-69.7px + var(--center-offset-y)));
+            calc(0.9px   + var(--center-offset-x)),
+            calc(-70.9px + var(--center-offset-y)));
 }
 
-.card-overlay--1 { --center-offset-x: -79px; --center-offset-y: 0px; }
+.card-overlay--1 { --center-offset-x: -77px; --center-offset-y: 0px; }
 .card-overlay--2 { --center-offset-x: 0px;   --center-offset-y: 0px; }
-.card-overlay--3 { --center-offset-x: 77px;  --center-offset-y: 0px; }
+.card-overlay--3 { --center-offset-x: 75px;  --center-offset-y: 0px; }
 
 @container slot-machine ((max-width: 700px) or (max-height: 670px)) {
     .parts {

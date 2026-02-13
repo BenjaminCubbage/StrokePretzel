@@ -16,7 +16,7 @@
         <svg
             v-show="!isDown"
             class="button-normal"
-            style="height: 100%"
+            style="height: var(--slot-machine-intrinsic-height)"
             viewBox="0 0 36.5 52.3">
             <ellipse class="st0" cx="18.2" cy="30.7" rx="5.3" ry="1.5"/>
             <path class="st1" d="M18.2,31.8c-2.5,0-5.1-0.6-5.1-1.7v-1.5H16c0.7-0.1,1.5-0.2,2.3-0.2s1.6,0.1,2.3,0.2l2.8,0v1.5
@@ -39,7 +39,7 @@
         <svg
             v-show="isDown"
             class="button-pressed"
-            style="height: 100%"
+            style="height: var(--slot-machine-intrinsic-height)"
             viewBox="0 0 36.5 52.3">
             <ellipse class="st0" cx="18.2" cy="30.7" rx="5.3" ry="1.5"/>
             <path class="st1" d="M13.1,29.4v0.7c0,1.1,2.6,1.7,5.1,1.7c2.5,0,5.1-0.6,5.1-1.7v-0.7H13.1z"/>

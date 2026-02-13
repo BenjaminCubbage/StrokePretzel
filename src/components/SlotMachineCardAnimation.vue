@@ -165,7 +165,7 @@ defineExpose({
     flex-direction: column;
     align-items: center;
     width: var(--symbol-height);
-    height: 99px;
+    height: 97px;
     overflow: hidden;
 }
 

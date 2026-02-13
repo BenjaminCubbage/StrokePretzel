@@ -1,5 +1,5 @@
 <template>
-    <svg style="height: 100%" viewBox="0 0 36.5 52.3">
+    <svg style="height: var(--slot-machine-intrinsic-height)" viewBox="0 0 36.5 52.3">
         <line class="st0" x1="18.8" y1="12.7" x2="17.7" y2="13.8"/>
         <rect x="17.4" y="13.1" transform="matrix(0.7216 -0.6923 0.6923 0.7216 -4.1186 16.3168)" class="st1" width="1.6" height="0.3"/>
         <line class="st0" x1="17.7" y1="12.7" x2="18.8" y2="13.8"/>
