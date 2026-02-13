@@ -1,0 +1,14 @@
+:root {
+    --col-hl-1: rgb(255, 176, 254);
+
+    --col-outl-1: rgb(171, 11, 171);
+
+    --col-navy-1: rgb(3, 3, 21);
+    --col-navy-2: rgb(17, 17, 88);
+    --col-navy-3: rgb(23, 23, 107);
+
+    --shadow-col-s: rgb(0 0 16 / 0.3);
+    --shadow-col-l: rgb(0 0 16 / 0.3);
+    --shadow-s: 0 4px  7px var(--shadow-col-s);
+    --shadow-l: 0 8px 10px var(--shadow-col-l);
+}
