@@ -6,12 +6,14 @@
         <ProbabilityEditorInput
             ref="numeratorEl"
             v-model="inputNumerator"
-            @keydown.enter="submit" />
+            @keydown.enter="submit"
+            aria-label="Numerator" />
         <div class="in">IN</div>
         <ProbabilityEditorInput
             ref="denominatorEl"
             v-model="inputDenominator"
-            @keydown.enter="submit" />
+            @keydown.enter="submit"
+            aria-label="Denominator" />
     </div>
 </template>
 

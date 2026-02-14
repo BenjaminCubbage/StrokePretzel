@@ -1,5 +1,5 @@
 <template>
-    <div class="app-container">
+    <main class="app-container">
         <ProbabilityEditor
             class="probability"
             v-model:numerator="numerator"
@@ -18,7 +18,7 @@
         <div class="bg-floor">
             <div class="grid-pattern"></div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script setup>
