@@ -179,7 +179,7 @@ function unpress() {
 */
 
 @media (max-width: 600px) or (max-height: 450px) {
-    .slot-machine-part-button{
+    .slot-machine-part-button:not(.slot-machine-part-button--held-down) {
         --hl-color: var(--col-hl-0);
     }
 }
