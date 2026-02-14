@@ -130,13 +130,22 @@ function unpress() {
 </script>
 
 <style scoped>
+.slot-machine-part-button {
+    --hl-thickness: 3px;
+    --hl-color: transparent;
+
+    -webkit-tap-highlight-color: transparent;
+    
+    filter: 
+        drop-shadow(0 calc(var(--hl-thickness) *  1) var(--hl-color))
+        drop-shadow(0 calc(var(--hl-thickness) * -1) var(--hl-color))
+        drop-shadow(calc(var(--hl-thickness) *  1) 0 var(--hl-color))
+        drop-shadow(calc(var(--hl-thickness) * -1) 0 var(--hl-color));
+}
+
 .slot-machine-part-button--hovered:not(.slot-machine-part-button--held-down),
 .slot-machine-part-button:focus {
-    filter: 
-        drop-shadow(0  2.75px var(--col-hl-1))
-        drop-shadow(0 -2.75px var(--col-hl-1))
-        drop-shadow( 2.75px 0 var(--col-hl-1))
-        drop-shadow(-2.75px 0 var(--col-hl-1));
+    --hl-color: var(--col-hl-0);
 }
 
 .slot-machine-part-button--hovered:not(.slot-machine-part-button--held-down) {
@@ -152,4 +161,28 @@ function unpress() {
 .st2{fill:#990B29;}
 .st3{fill:#770053;}
 .st4{fill:#CE295C;}
+
+@media only screen and ((max-width: 700px) or (max-height: 650px)) {
+    .slot-machine-part-button {
+        --hl-thickness: 3.5px;
+    }
+}
+
+@media only screen and ((max-width: 400px) or (max-height: 600px)) {
+    .slot-machine-part-button {
+        --hl-thickness: 4px;
+    }
+}
+
+/*
+    Target mobile
+*/
+@media only screen and ((max-width: 600px) or (max-height: 450px)) {
+    .slot-machine-part-button {
+        /* 
+            Always show highlight on small screens.
+        */
+        --hl-color: var(--col-hl-0);
+    }
+}
 </style>
