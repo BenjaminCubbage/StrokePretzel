@@ -121,21 +121,21 @@ function spinCompleted(won) {
     background-size: 40px 40px;
 }
 
-@media only screen and (max-height: 650px) {
+@media (max-height: 650px) {
     .app-container {
         grid-template-columns: [probability slot-machine bg] 1fr;
         grid-template-rows:    [probability bg-start] 40px [slot-machine] 1fr [bg-end];
     }
 }
 
-@media only screen and (max-height: 550px) {
+@media (max-height: 550px) {
     .app-container {
         grid-template-columns: [probability slot-machine bg] 1fr;
         grid-template-rows:    [probability bg-start] 60px [slot-machine] 1fr [bg-end];
     }
 }
 
-@media only screen and (max-height: 500px) {
+@media (max-height: 500px) {
     .app-container {
         grid-template-columns: [probability slot-machine bg] 1fr;
         grid-template-rows:    [probability bg-start] 100px [slot-machine] 1fr [bg-end];

@@ -162,13 +162,13 @@ function unpress() {
 .st3{fill:#770053;}
 .st4{fill:#CE295C;}
 
-@media only screen and ((max-width: 700px) or (max-height: 650px)) {
+@media (max-width: 700px) or (max-height: 650px) {
     .slot-machine-part-button {
         --hl-thickness: 3.5px;
     }
 }
 
-@media only screen and ((max-width: 400px) or (max-height: 600px)) {
+@media (max-width: 400px) or (max-height: 600px) {
     .slot-machine-part-button {
         --hl-thickness: 4px;
     }
@@ -177,11 +177,9 @@ function unpress() {
 /*
     Target mobile
 */
-@media only screen and ((max-width: 600px) or (max-height: 450px)) {
-    .slot-machine-part-button {
-        /* 
-            Always show highlight on small screens.
-        */
+
+@media (max-width: 600px) or (max-height: 450px) {
+    .slot-machine-part-button{
         --hl-color: var(--col-hl-0);
     }
 }
